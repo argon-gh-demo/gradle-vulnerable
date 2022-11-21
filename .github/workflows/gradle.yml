@@ -28,6 +28,8 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Setup Gradle Wrapper
       run: gradle wrapper
+    - name: Gradle Wrapper Validation
+      uses: gradle/wrapper-validation-action@v1
     - name: Build with Gradle
       run: ./gradlew build --write-locks
     - name: List directory
