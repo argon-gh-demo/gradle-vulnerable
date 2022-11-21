@@ -30,6 +30,10 @@ jobs:
       run: gradle wrapper
     - name: Build with Gradle
       run: ./gradlew build --write-locks
+    - name: List directory
+      run: ls -la
+    - name: Show lock file contents
+      run: cat gradle.lock
     - name: Run Trivy vulnerability scanner in IaC mode
       uses: aquasecurity/trivy-action@master
       with:
