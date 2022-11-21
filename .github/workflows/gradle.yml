@@ -29,7 +29,7 @@ jobs:
     - name: Setup Gradle Wrapper
       run: gradle wrapper
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --write-locks
     - name: Run Trivy vulnerability scanner in IaC mode
       uses: aquasecurity/trivy-action@master
       with:
