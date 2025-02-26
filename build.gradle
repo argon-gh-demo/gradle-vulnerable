@@ -163,10 +163,3 @@ dependencyLocking {
     lockAllConfigurations()
     lockFile = file("gradle.lock") // This should write to the project root
 }
-
-// Task to generate dependency lock file
-tasks.withType(GenerateLockTask) {
-    // Ensure lock file is generated properly
-    outputs.upToDateWhen { false }
-}
-
