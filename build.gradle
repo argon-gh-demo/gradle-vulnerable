@@ -173,3 +173,9 @@ jacocoTestReport {
         xml.outputLocation.set(file("${buildDir}/reports/jacoco.xml"))
     }
 }
+
+dependencyLocking {  
+
+lockAllConfigurations() 
+
+}
