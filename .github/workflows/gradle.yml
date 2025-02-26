@@ -40,7 +40,7 @@ jobs:
 
     - name: List Directory Contents
       run: |
-        ls -la
+        ls -lad */*/*
 
     - name: Run Aqua Scanner
       uses: docker://aquasec/aqua-scanner
