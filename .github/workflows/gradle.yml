@@ -37,7 +37,7 @@ jobs:
       run: ./gradlew clean build --write-locks --info
 
     - name: List Directory Contents
-      run: ls -la
+      run: ls -lad */*
 
     - name: Run Aqua Scanner
       uses: docker://aquasec/aqua-scanner
