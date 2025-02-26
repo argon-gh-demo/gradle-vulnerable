@@ -165,7 +165,7 @@ dependencyLocking {
 }
 
 // Task to generate dependency lock file
-tasks.withType<GenerateLockTask> {
+tasks.withType(GenerateLockTask) {
     // Ensure lock file is generated properly
     outputs.upToDateWhen { false }
 }
