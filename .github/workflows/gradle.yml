@@ -5,9 +5,7 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [ with-gradle-flag ]
 
 jobs:
   build:
@@ -25,13 +23,13 @@ jobs:
     - name: Gradle Wrapper Validation
       uses: gradle/wrapper-validation-action@v1
     - name: Build with Gradle
-      run: ./gradlew build --write-locks
+      run: ./gradlew build
     - name: List directory
       run: ls -la
     - name: Run Aqua scanner
       uses: docker://aquasec/aqua-scanner
       with:
-          args: trivy fs --scanners misconfig,vuln,secret .
+          args: trivy fs --scanners misconfig,vuln,secret . --gradle
       env:
           AQUA_KEY: ${{ secrets.AQUA_KEY }}
           AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
