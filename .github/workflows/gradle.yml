@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -32,8 +33,8 @@ jobs:
     - name: Validate Gradle Wrapper
       uses: gradle/wrapper-validation-action@v1
 
-    - name: Build with Gradle
-      run: ./gradlew build --write-locks && ls -la
+    - name: Build with Gradle and Generate Lock Files
+      run: ./gradlew clean build --write-locks --info
 
     - name: List Directory Contents
       run: ls -la
