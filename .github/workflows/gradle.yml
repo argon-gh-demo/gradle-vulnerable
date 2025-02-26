@@ -39,7 +39,6 @@ jobs:
     - name: List Directory Contents
       run: |
         ls -la
-        ls -la gradle/dependency-locks
 
     - name: Run Aqua Scanner
       uses: docker://aquasec/aqua-scanner
