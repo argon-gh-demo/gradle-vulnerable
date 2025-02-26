@@ -33,7 +33,7 @@ jobs:
       uses: gradle/wrapper-validation-action@v1
 
     - name: Build with Gradle
-      run: ./gradlew build --write-locks
+      run: ./gradlew build --write-locks && ls -la
 
     - name: List Directory Contents
       run: ls -la
